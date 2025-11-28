@@ -49,8 +49,8 @@ export function FrameworkShowcaseClient() {
         onSearchResults={handleSearchResults}
       />
       <main className="flex-1 p-4 md:p-8">
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-6 text-lg text-muted-foreground">{headerMessage}</p>
+        <div className="mx-auto max-w-7xl px-4">
+          <h2 className="text-xl font-semibold mb-6">{headerMessage}</h2>
           <ComponentGallery
             components={displayedComponents}
             isLoading={isPending}
