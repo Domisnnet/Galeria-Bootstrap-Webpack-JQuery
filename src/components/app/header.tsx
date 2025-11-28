@@ -11,7 +11,7 @@ import { Form, FormControl, FormField, FormItem, FormMessage } from '@/component
 import { Search, LoaderCircle, BrainCircuit } from 'lucide-react';
 import type { Framework, ComponentInfo } from '@/lib/types';
 import { useToast } from '@/hooks/use-toast';
-import { useActionState } from 'react';
+import { useActionState, useTransition } from 'react';
 
 const frameworks: Framework[] = ['Bootstrap', 'Webpack', 'JQuery'];
 
@@ -31,6 +31,7 @@ export function Header({
   onSearchResults,
 }: HeaderProps) {
   const { toast } = useToast();
+  const [isPending, startTransition] = useTransition();
   
   const initialState = { success: false, data: [], error: null };
   const [state, formAction] = useActionState(searchComponents, initialState);
@@ -39,8 +40,6 @@ export function Header({
     resolver: zodResolver(searchSchema),
     defaultValues: { query: '' },
   });
-
-  const { isSubmitting } = form.formState;
 
   useEffect(() => {
     if (form.formState.isSubmitSuccessful && state) {
@@ -60,6 +59,12 @@ export function Header({
     onFrameworkChange(framework);
     form.reset();
   };
+
+  const onSubmit = (formData: FormData) => {
+    startTransition(() => {
+      formAction(formData);
+    });
+  }
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -83,7 +88,7 @@ export function Header({
             </div>
             <Form {...form}>
               <form
-                action={formAction}
+                action={onSubmit}
                 className="relative"
               >
                 <input type="hidden" name="framework" value={selectedFramework} />
@@ -100,8 +105,8 @@ export function Header({
                             className="pl-10 pr-[90px]"
                             {...field}
                           />
-                           <Button type="submit" variant="accent" className="absolute right-1 top-1/2 -translate-y-1/2 h-8 w-20" disabled={isSubmitting}>
-                            {isSubmitting ? (
+                           <Button type="submit" variant="accent" className="absolute right-1 top-1/2 -translate-y-1/2 h-8 w-20" disabled={isPending}>
+                            {isPending ? (
                               <LoaderCircle className="animate-spin" />
                             ) : (
                               "Search"
