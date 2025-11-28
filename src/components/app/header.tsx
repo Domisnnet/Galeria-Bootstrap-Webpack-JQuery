@@ -43,28 +43,22 @@ export function Header({
   const { isSubmitting } = form.formState;
 
   useEffect(() => {
-    if (form.formState.isSubmitSuccessful) {
-        if (state.success) {
-            onSearchResults(state.data, form.getValues('query'));
-            // Do not reset the form to keep the query visible
-        } else if (state.error) {
-            toast({
-              variant: 'destructive',
-              title: 'Search Failed',
-              description: state.error,
-            });
-        }
+    if (state.success) {
+      onSearchResults(state.data, form.getValues('query'));
+      // Do not reset the form to keep the query visible
+    } else if (state.error) {
+        toast({
+          variant: 'destructive',
+          title: 'Search Failed',
+          description: state.error,
+        });
     }
-  }, [form.formState.isSubmitSuccessful, state]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state]);
   
   const handleFrameworkClick = (framework: Framework) => {
     onFrameworkChange(framework);
     form.reset();
-  };
-  
-  const onSubmit = (data: z.infer<typeof searchSchema>) => {
-    const formData = new FormData(formRef.current!);
-    formAction(formData);
   };
 
   return (
@@ -90,7 +84,7 @@ export function Header({
             <Form {...form}>
               <form
                 ref={formRef}
-                onSubmit={form.handleSubmit(onSubmit)}
+                action={formAction}
                 className="relative"
               >
                 <input type="hidden" name="framework" value={selectedFramework} />
