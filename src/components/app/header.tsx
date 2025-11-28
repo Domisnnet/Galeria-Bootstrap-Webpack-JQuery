@@ -59,8 +59,8 @@ export function Header({
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4">
-      <div className="container flex h-24 items-center justify-between gap-4">
+    <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex h-24 items-center justify-between gap-4 px-4">
         <div className="flex items-center gap-2">
           <BrainCircuit className="h-12 w-12 text-primary" />
           <h1 className="text-2xl font-bold tracking-tight hidden md:block">Apresentação de Frameworks</h1>
@@ -114,7 +114,7 @@ export function Header({
             </Form>
           </div>
         </div>
-        <div className="w-12" />
+        <div className="w-12 hidden md:block" />
       </div>
     </header>
   );
