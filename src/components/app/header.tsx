@@ -61,12 +61,12 @@ export function Header({
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-24 items-center justify-between gap-4">
-        <div className="flex items-center gap-2 ml-4">
+        <div className="flex items-center gap-2">
           <BrainCircuit className="h-12 w-12 text-primary" />
           <h1 className="text-2xl font-bold tracking-tight hidden md:block">Apresentação de Frameworks</h1>
         </div>
-        <div className="flex-1">
-          <div className="mx-auto max-w-2xl">
+        <div className="flex flex-1 items-center justify-center">
+          <div className="w-full max-w-2xl">
             <div className="mb-2 flex justify-center gap-2">
               {frameworks.map((framework) => (
                 <Button
@@ -114,7 +114,7 @@ export function Header({
             </Form>
           </div>
         </div>
-        <div className="w-0 md:w-[220px]"/>
+        <div className="flex items-center gap-2" />
       </div>
     </header>
   );
