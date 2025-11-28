@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useActionState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -11,6 +11,7 @@ import { Form, FormControl, FormField, FormItem, FormMessage } from '@/component
 import { Search, LoaderCircle, BrainCircuit } from 'lucide-react';
 import type { Framework, ComponentInfo } from '@/lib/types';
 import { useToast } from '@/hooks/use-toast';
+import { useActionState } from 'react';
 
 const frameworks: Framework[] = ['Bootstrap', 'Webpack', 'JQuery'];
 
@@ -30,7 +31,6 @@ export function Header({
   onSearchResults,
 }: HeaderProps) {
   const { toast } = useToast();
-  const formRef = useRef<HTMLFormElement>(null);
   
   const initialState = { success: false, data: [], error: null };
   const [state, formAction] = useActionState(searchComponents, initialState);
@@ -40,21 +40,21 @@ export function Header({
     defaultValues: { query: '' },
   });
 
-  const { isSubmitting } = form.formState;
+  const { isSubmitting, isSubmitSuccessful } = form.formState;
 
   useEffect(() => {
-    if (state.success) {
-      onSearchResults(state.data, form.getValues('query'));
-      // Do not reset the form to keep the query visible
-    } else if (state.error) {
+    if (isSubmitSuccessful) {
+      if (state.success) {
+        onSearchResults(state.data, form.getValues('query'));
+      } else if (state.error) {
         toast({
           variant: 'destructive',
           title: 'Search Failed',
           description: state.error,
         });
+      }
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state]);
+  }, [isSubmitSuccessful, state, onSearchResults, form, toast]);
   
   const handleFrameworkClick = (framework: Framework) => {
     onFrameworkChange(framework);
@@ -83,7 +83,6 @@ export function Header({
             </div>
             <Form {...form}>
               <form
-                ref={formRef}
                 action={formAction}
                 className="relative"
               >
