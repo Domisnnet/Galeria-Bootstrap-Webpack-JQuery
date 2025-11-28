@@ -11,7 +11,7 @@ import { Form, FormControl, FormField, FormItem, FormMessage } from '@/component
 import { Search, LoaderCircle, BrainCircuit } from 'lucide-react';
 import type { Framework, ComponentInfo } from '@/lib/types';
 import { useToast } from '@/hooks/use-toast';
-import { useActionState, useTransition } from 'react';
+import { useActionState } from 'react';
 
 const frameworks: Framework[] = ['Bootstrap', 'Webpack', 'JQuery'];
 
@@ -31,7 +31,6 @@ export function Header({
   onSearchResults,
 }: HeaderProps) {
   const { toast } = useToast();
-  const [isPending, startTransition] = useTransition();
   
   const initialState = { success: false, data: [], error: null };
   const [state, formAction] = useActionState(searchComponents, initialState);
@@ -41,19 +40,21 @@ export function Header({
     defaultValues: { query: '' },
   });
 
-  const { isSubmitting, isSubmitSuccessful } = form.formState;
+  const { isSubmitting } = form.formState;
 
   useEffect(() => {
-    if (state.success) {
-      onSearchResults(state.data, form.getValues('query'));
-    } else if (state.error) {
-      toast({
-        variant: 'destructive',
-        title: 'Search Failed',
-        description: state.error,
-      });
+    if (form.formState.isSubmitSuccessful && state) {
+      if (state.success) {
+        onSearchResults(state.data, form.getValues('query'));
+      } else if (state.error) {
+        toast({
+          variant: 'destructive',
+          title: 'Search Failed',
+          description: state.error,
+        });
+      }
     }
-  }, [state, onSearchResults, form, toast]);
+  }, [form.formState.isSubmitSuccessful, state, onSearchResults, form, toast]);
   
   const handleFrameworkClick = (framework: Framework) => {
     onFrameworkChange(framework);
@@ -64,8 +65,8 @@ export function Header({
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-24 items-center justify-between gap-4">
         <div className="flex items-center gap-2">
-          <BrainCircuit className="h-8 w-8 text-primary" />
-          <h1 className="text-2xl font-bold tracking-tight hidden md:block">Apresentação de Frameworks</h1>
+          <BrainCircuit className="h-10 w-10 text-primary" />
+          <h1 className="text-3xl font-bold tracking-tight hidden md:block">Apresentação de Frameworks</h1>
         </div>
         <div className="flex-1">
           <div className="mx-auto max-w-2xl">
