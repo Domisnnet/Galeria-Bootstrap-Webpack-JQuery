@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
-import { useFormState } from 'react-dom';
+import { useEffect, useRef, useActionState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -34,7 +33,7 @@ export function Header({
   const formRef = useRef<HTMLFormElement>(null);
   
   const initialState = { success: false, data: [], error: null };
-  const [state, formAction] = useFormState(searchComponents, initialState);
+  const [state, formAction] = useActionState(searchComponents, initialState);
 
   const form = useForm<z.infer<typeof searchSchema>>({
     resolver: zodResolver(searchSchema),
