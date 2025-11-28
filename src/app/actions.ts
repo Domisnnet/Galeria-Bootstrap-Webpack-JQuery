@@ -29,7 +29,7 @@ export async function searchComponents(prevState: any, formData: FormData) {
 
     const mappedResults = results.map((result, index) => ({
       ...result,
-      id: `search-${index}-${new Date().getTime()}`,
+      id: `search-${index}-${result.name.replace(/\s+/g, '-')}`,
       imageId: 'search-result',
     }));
 
