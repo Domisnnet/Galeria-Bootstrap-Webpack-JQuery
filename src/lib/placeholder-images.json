@@ -1,3 +1,118 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "bootstrap-1",
+      "description": "Bootstrap Grid System",
+      "imageUrl": "https://images.unsplash.com/photo-1761509813751-383d689461da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxhcmNoaXRlY3R1cmUlMjBncmlkfGVufDB8fHx8MTc2NDM1NTk3Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "architecture grid"
+    },
+    {
+      "id": "bootstrap-2",
+      "description": "Bootstrap Buttons",
+      "imageUrl": "https://images.unsplash.com/photo-1708093191620-9725764e6885?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y29sb3JmdWwlMjBidXR0b25zfGVufDB8fHx8MTc2NDM1NTk3M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "colorful buttons"
+    },
+    {
+      "id": "bootstrap-3",
+      "description": "Bootstrap Cards",
+      "imageUrl": "https://images.unsplash.com/photo-1660501487209-d2c08971ca2f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2FyZCUyMGxheW91dHxlbnwwfHx8fDE3NjQyNTkxNTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "card layout"
+    },
+    {
+      "id": "bootstrap-4",
+      "description": "Bootstrap Navbar",
+      "imageUrl": "https://images.unsplash.com/photo-1645957079520-d35adbbe64db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3ZWJzaXRlJTIwaGVhZGVyfGVufDB8fHx8MTc2NDI3NDYwOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "website header"
+    },
+    {
+      "id": "bootstrap-5",
+      "description": "Bootstrap Forms",
+      "imageUrl": "https://images.unsplash.com/photo-1633502401680-e2955cc6aca6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxmb3JtJTIwaW5wdXR8ZW58MHx8fHwxNzY0MjU5MTU1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "form input"
+    },
+    {
+      "id": "bootstrap-6",
+      "description": "Bootstrap Modals",
+      "imageUrl": "https://picsum.photos/seed/bs6/600/400",
+      "imageHint": "popup dialog"
+    },
+    {
+      "id": "webpack-1",
+      "description": "Webpack Loaders",
+      "imageUrl": "https://images.unsplash.com/photo-1663369691585-1e227fb362cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxkYXRhJTIwcGlwZWxpbmV8ZW58MHx8fHwxNzY0MjY4MTMyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "data pipeline"
+    },
+    {
+      "id": "webpack-2",
+      "description": "Webpack Plugins",
+      "imageUrl": "https://images.unsplash.com/photo-1614447428943-52ec0bdbc7aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxnZWFycyUyMG1hY2hpbmV8ZW58MHx8fHwxNzY0MzE2NDI5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "gears machine"
+    },
+    {
+      "id": "webpack-3",
+      "description": "Webpack Dev Server",
+      "imageUrl": "https://picsum.photos/seed/wp3/600/400",
+      "imageHint": "live reloading"
+    },
+    {
+      "id": "webpack-4",
+      "description": "Webpack Code Splitting",
+      "imageUrl": "https://images.unsplash.com/photo-1494059980473-813e73ee784b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwdXp6bGUlMjBwaWVjZXN8ZW58MHx8fHwxNzY0MzA4MTUwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "puzzle pieces"
+    },
+    {
+      "id": "webpack-5",
+      "description": "Webpack Asset Management",
+      "imageUrl": "https://images.unsplash.com/photo-1690264831486-e3feda094345?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxmaWxlJTIwb3JnYW5pemF0aW9ufGVufDB8fHx8MTc2NDM1NTk3M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "file organization"
+    },
+    {
+      "id": "webpack-6",
+      "description": "Webpack Module Federation",
+      "imageUrl": "https://images.unsplash.com/photo-1664527184253-b09e897a81f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb25uZWN0ZWQlMjBub2Rlc3xlbnwwfHx8fDE3NjQzNTU5NzN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "connected nodes"
+    },
+    {
+      "id": "jquery-1",
+      "description": "jQuery Selectors",
+      "imageUrl": "https://images.unsplash.com/photo-1571878385238-2d89b27962b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtYWduaWZ5aW5nJTIwZ2xhc3N8ZW58MHx8fHwxNzY0MzU1NTU1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "magnifying glass"
+    },
+    {
+      "id": "jquery-2",
+      "description": "jQuery DOM Manipulation",
+      "imageUrl": "https://images.unsplash.com/photo-1633469924738-52101af51d87?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxidWlsZGluZyUyMGJsb2Nrc3xlbnwwfHx8fDE3NjQzNDA0ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "building blocks"
+    },
+    {
+      "id": "jquery-3",
+      "description": "jQuery Event Handling",
+      "imageUrl": "https://images.unsplash.com/photo-1588720516255-fc99581c9716?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaGFpbiUyMHJlYWN0aW9ufGVufDB8fHx8MTc2NDM1NTk3M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chain reaction"
+    },
+    {
+      "id": "jquery-4",
+      "description": "jQuery Effects",
+      "imageUrl": "https://images.unsplash.com/photo-1761295908063-3da14583ad64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtYWdpYyUyMHNwYXJrbGVzfGVufDB8fHx8MTc2NDM1NTk3M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "magic sparkles"
+    },
+    {
+      "id": "jquery-5",
+      "description": "jQuery AJAX",
+      "imageUrl": "https://images.unsplash.com/photo-1730531678572-49f4765235f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxuZXR3b3JrJTIwY29tbXVuaWNhdGlvbnxlbnwwfHx8fDE3NjQzNTU5NzN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "network communication"
+    },
+    {
+      "id": "jquery-6",
+      "description": "jQuery UI Widgets",
+      "imageUrl": "https://images.unsplash.com/photo-1760008486577-21baa8b560a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbnRlcmZhY2UlMjBlbGVtZW50c3xlbnwwfHx8fDE3NjQzNTU5NzN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "interface elements"
+    },
+    {
+      "id": "search-result",
+      "description": "Generic search result",
+      "imageUrl": "https://images.unsplash.com/photo-1644088379091-d574269d422f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwYWJzdHJhY3R8ZW58MHx8fHwxNzY0Mjk1ODE0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "technology abstract"
+    }
+  ]
 }
