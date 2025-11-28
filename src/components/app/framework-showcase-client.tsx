@@ -15,7 +15,7 @@ const imageMap: Map<string, ImagePlaceholder> = new Map(
 export function FrameworkShowcaseClient() {
   const [selectedFramework, setSelectedFramework] = useState<Framework>('Bootstrap');
   const [displayedComponents, setDisplayedComponents] = useState<ComponentInfo[]>([]);
-  const [headerMessage, setHeaderMessage] = useState<string>('Discover components for Bootstrap.');
+  const [headerMessage, setHeaderMessage] = useState<string>('Welcome! Discover components for Bootstrap.');
   const [isPending, startTransition] = useTransition();
 
   useEffect(() => {
