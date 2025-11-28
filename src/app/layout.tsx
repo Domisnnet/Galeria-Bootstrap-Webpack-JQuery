@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
-  title: 'Framework Showcase',
+  title: 'Apresentação de Frameworks',
   description: 'An interactive gallery for Bootstrap, Webpack, and jQuery components, powered by AI search.',
 };
 
