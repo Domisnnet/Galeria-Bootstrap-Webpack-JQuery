@@ -11,7 +11,7 @@ import { Form, FormControl, FormField, FormItem, FormMessage } from '@/component
 import { Search, LoaderCircle, BrainCircuit } from 'lucide-react';
 import type { Framework, ComponentInfo } from '@/lib/types';
 import { useToast } from '@/hooks/use-toast';
-import { useActionState, useTransition } from 'react';
+import { useActionState } from 'react';
 
 const frameworks: Framework[] = ['Bootstrap', 'Webpack', 'JQuery'];
 
@@ -31,10 +31,8 @@ export function Header({
   onSearchResults,
 }: HeaderProps) {
   const { toast } = useToast();
-  const [isPending, startTransition] = useTransition();
   
-  const initialState = { success: false, data: [], error: null };
-  const [state, formAction] = useActionState(searchComponents, initialState);
+  const [state, formAction, isPending] = useActionState(searchComponents, { success: false, data: [], error: null });
 
   const form = useForm<z.infer<typeof searchSchema>>({
     resolver: zodResolver(searchSchema),
@@ -60,18 +58,12 @@ export function Header({
     form.reset();
   };
 
-  const onSubmit = (formData: FormData) => {
-    startTransition(() => {
-      formAction(formData);
-    });
-  }
-
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-24 items-center justify-between gap-4">
-        <div className="flex items-center gap-2">
-          <BrainCircuit className="h-10 w-10 text-primary" />
-          <h1 className="text-3xl font-bold tracking-tight hidden md:block">Apresentação de Frameworks</h1>
+        <div className="flex items-center gap-2 ml-4">
+          <BrainCircuit className="h-12 w-12 text-primary" />
+          <h1 className="text-2xl font-bold tracking-tight hidden md:block">Apresentação de Frameworks</h1>
         </div>
         <div className="flex-1">
           <div className="mx-auto max-w-2xl">
@@ -88,7 +80,7 @@ export function Header({
             </div>
             <Form {...form}>
               <form
-                action={onSubmit}
+                action={formAction}
                 className="relative"
               >
                 <input type="hidden" name="framework" value={selectedFramework} />
